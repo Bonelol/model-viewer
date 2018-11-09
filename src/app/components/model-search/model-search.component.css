@@ -1,0 +1,13 @@
+.model-search {
+    display:flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+div[mv-item-body] > div + div {
+    margin-top: 12px;
+}
+
+button + button {
+    margin-left: 4px;
+}

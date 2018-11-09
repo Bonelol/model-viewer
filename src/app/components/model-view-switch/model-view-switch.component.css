@@ -1,0 +1,8 @@
+nz-card {
+    background: #fbfbfb;
+    transition: background-color 0.2s ease-in;
+}
+
+nz-card:hover {
+    background: #fff;
+}

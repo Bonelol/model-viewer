@@ -1,0 +1,18 @@
+<ng-container>
+    <nz-card>        
+        <div class="model-view-item">
+            <div style="text-align:right;height: 32px;margin-bottom: 4px">
+                <button nz-button nzType="primary" nzShape="circle" (click)="handleCloseButtonOnClick($event)">
+                    <i nz-icon type="close" theme="outline"></i>
+                </button>
+            </div>
+            <div [ngSwitch]="modelViewDescriptor.type" style="height: calc(100% - 36px);">
+                <mv-details *ngSwitchCase="options.Details" [modelViewDescriptor]="modelViewDescriptor"></mv-details>
+                <mv-list *ngSwitchCase="options.List" [modelViewDescriptor]="modelViewDescriptor">...</mv-list>
+                <mv-model-search *ngSwitchCase="options.Search" [modelViewDescriptor]="modelViewDescriptor">...</mv-model-search>
+                <mv-model-list *ngSwitchCase="options.Entry" [modelViewDescriptor]="modelViewDescriptor">...</mv-model-list >
+                <div *ngSwitchDefault>...</div>
+            </div>
+        </div>
+    </nz-card>
+</ng-container>

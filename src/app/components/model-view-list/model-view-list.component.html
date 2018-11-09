@@ -1,0 +1,17 @@
+<div class="model-view-list">
+  <mv-item-container>
+      <div mv-item-body>
+        <nz-list [nzDataSource]="result" nzBordered [nzRenderItem]="item">
+          <ng-template #item let-item>
+            <nz-list-item>
+              <div style="max-height: 64px;" (click)="onItemClick(item)">
+                <div *ngFor="let property of modelViewDescriptor.properties">
+                    {{property.Name}} {{item[property.Name]}}
+                </div>
+              </div>
+            </nz-list-item>
+          </ng-template>
+        </nz-list>
+      </div>
+  </mv-item-container>
+</div>

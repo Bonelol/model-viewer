@@ -1,0 +1,12 @@
+.model-view-container {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.model-view-container .model-view-item {
+    min-width: 240px;
+}
+
+.model-view-container > div + div {
+    margin-left: 8px;
+}

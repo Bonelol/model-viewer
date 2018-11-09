@@ -1,0 +1,14 @@
+.model-view-list {
+    display:flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+nz-list-item > div {
+    max-height: 64px;
+    overflow: hidden;
+}
+
+nz-list-item > div:hover {
+    background:orange;
+}

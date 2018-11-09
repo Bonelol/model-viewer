@@ -1,0 +1,22 @@
+.mv-item-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.body, .header {
+    width: 100%;
+}
+
+div.body {
+    overflow-y: hidden;
+    padding: 8px;
+}
+
+div.body:hover {
+    overflow-y: auto;
+}
+
+.mv-item-container > div + div {
+    margin-top: 12px;
+}

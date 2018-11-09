@@ -1,0 +1,6 @@
+<div class="model-view-container">
+  <div><mv-model-list (mvOnModelSelected)="handleMvOnModelSelected($event)"></mv-model-list></div>
+  <div *ngFor="let descriptor of descriptors">
+    <mv-switch [modelViewDescriptor]="descriptor" (close)="handleClose($event)"></mv-switch>
+  </div>
+</div>

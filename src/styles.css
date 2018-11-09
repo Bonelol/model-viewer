@@ -1,0 +1,24 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+    background: #ECECEC;
+}
+
+mv-container {
+    display: block;
+    background: #ECECEC;
+}
+
+mv-switch {
+    display: block;
+}
+
+mv-item-container {
+    height: 100%;
+}
+
+.model-view-item {
+    display: flex;
+    flex-direction: column;
+    min-width: 400px;
+    height: 960px;
+}

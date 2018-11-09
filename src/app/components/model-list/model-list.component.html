@@ -1,0 +1,9 @@
+<nz-card>
+    <div class="model-view-item">
+        <nz-select style="width:100%;" nzShowSearch nzAllowClear nzPlaceHolder="Select a model" 
+        [(ngModel)]="selectedModel"
+        (ngModelChange)="handleNgModelChange($event)">
+          <nz-option *ngFor="let model of models" [nzLabel]="model.Name" [nzValue]="model"></nz-option>
+        </nz-select>
+    </div>
+</nz-card>

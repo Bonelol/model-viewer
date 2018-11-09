@@ -1,0 +1,29 @@
+<div class="model-search">
+    <mv-item-container>
+        <div mv-item-header>
+            <button nz-button nzType="primary" (click)="search()">
+                <i nz-icon type="search"></i>Search
+            </button>
+            <button nz-button nzType="primary" (click)="search()">
+                <i nz-icon type="undo" theme="outline"></i>Clear
+            </button>
+        </div>
+        <div mv-item-body>
+            <div *ngFor="let property of modelClassProperties">
+                <div>{{property.Name}}</div>
+                <div [ngSwitch]="getType(property.TypeName)">            
+                    <div *ngSwitchCase="types.Number">
+                        <nz-input-number [(ngModel)]="values[property.Name]"></nz-input-number>
+                    </div>
+                    <div *ngSwitchCase="types.Boolean">
+                        <nz-switch [(ngModel)]="values[property.Name]"></nz-switch>
+                    </div>
+                    <div *ngSwitchCase="types.String">
+                        <textarea nz-input nzAutosize [(ngModel)]="values[property.Name]"></textarea>
+                    </div>
+                    <div *ngSwitchDefault>...</div>
+                </div>
+            </div>
+        </div>
+    </mv-item-container>
+</div>
