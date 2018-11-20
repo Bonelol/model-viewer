@@ -11,3 +11,7 @@ div[mv-item-body] > div + div {
 button + button {
     margin-left: 4px;
 }
+
+nz-input-number, textarea {
+    width: 100%;
+}

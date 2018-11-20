@@ -44,4 +44,14 @@ export class ModelDescribeService extends HttpService {
       }),
       catchError(this.handleError));
   }
+
+  update(query: any, values: Map<string, any>): Observable<any[]> {
+    const url = `${this.rootUrl}/model/update?query=${JSON.stringify(query)}`;
+    return this.http.post(url, values, {withCredentials: true}).pipe(
+      map(response => {
+          const json = response;
+          return json as any[];
+      }),
+      catchError(this.handleError));
+  }
 }

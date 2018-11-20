@@ -5,5 +5,6 @@ export class ModelClassDetails {
     IsNavigation: boolean;
     IsCollection: boolean;
     IsNullable: boolean;
+    IsPrimaryKey: boolean;
     ForeignKeys: string[];
 }
