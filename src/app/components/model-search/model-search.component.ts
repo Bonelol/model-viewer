@@ -17,7 +17,7 @@ export class ModelSearchComponent implements OnInit, OnChanges {
 
   modelClassDetails: ModelClassDetails[] = [];
   types = Types;
-  values: Map<string, any> = {} as any;
+  values = {} as any;
 
   get modelClassProperties(): ModelClassDetails[] {
     return this.modelClassDetails.filter(d => !d.IsNavigation);
@@ -57,5 +57,9 @@ export class ModelSearchComponent implements OnInit, OnChanges {
     const index = this.store.descriptors.indexOf(this.modelViewDescriptor);
     const count = index + 1;
     this.store.descriptors = this.store.descriptors.slice(0, count).concat(descriptor);
+  }
+
+  clear() {
+    this.values = {};
   }
 }

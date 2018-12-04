@@ -1,0 +1,7 @@
+<div class="mv-search-string-input">
+  <nz-select [(ngModel)]="selectedValue" (ngModelChange)="handleChange()">
+    <nz-option nzValue="contains" nzLabel="Contains"></nz-option>
+    <nz-option nzValue="equals" nzLabel="Equals"></nz-option>
+  </nz-select>
+  <input nz-input placeholder="" [(ngModel)]="input" (ngModelChange)="handleChange()">
+</div>

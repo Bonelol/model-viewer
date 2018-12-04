@@ -103,6 +103,6 @@ export class ModelViewDetailsComponent implements OnInit, OnChanges {
   }
 
   undo() {
-    console.log('undo');
+    this.modelViewDescriptor.data = this.originalData;
   }
 }

@@ -13,6 +13,8 @@ export class ModelViewListComponent implements OnInit, OnChanges {
   @Input() modelViewDescriptor: ModelViewDescriptor;
 
   result: any[] = [];
+  currentItem: any;
+  previousItem: any;
 
   constructor(private readonly service: ModelDescribeService, private readonly store: ModelViewStoreService) { }
 
@@ -35,6 +37,14 @@ export class ModelViewListComponent implements OnInit, OnChanges {
 
     const index = this.store.descriptors.indexOf(this.modelViewDescriptor);
     const count = index + 1;
+
+    if (this.currentItem) {
+      this.previousItem = this.currentItem;
+      this.previousItem.selected = false;
+    }
+
+    this.currentItem = item;
+    this.currentItem.selected = true;
     this.store.descriptors = this.store.descriptors.slice(0, count).concat(descriptor);
   }
 }

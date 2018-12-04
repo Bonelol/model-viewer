@@ -1,0 +1,20 @@
+.mv-search-number-input {
+    display: flex;
+}
+
+.mv-search-number-input > nz-select {
+    width: 30%;
+}
+
+.mv-search-number-input > div {
+    width: 70%;
+    margin-left: 4px;
+}
+
+nz-input-number {
+    width: 100%;
+}
+
+nz-input-number + nz-input-number {
+    margin-top: 4px;
+}

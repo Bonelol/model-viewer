@@ -18,6 +18,9 @@ import { ModelViewItemContainerComponent } from './components/model-view-item-co
 import { ModelViewListComponent } from './components/model-view-list/model-view-list.component';
 import { ModelViewStoreService } from './services/model-view-store.service';
 import { ModelViewDetailsComponent } from './components/model-view-details/model-view-details.component';
+import { ModelSearchInputComponent } from './components/model-search-input/model-search-input.component';
+import { ModelSearchStringInputComponent } from './components/model-search-string-input/model-search-string-input.component';
+import { ModelSearchNumberInputComponent } from './components/model-search-number-input/model-search-number-input.component';
 
 registerLocaleData(zh);
 
@@ -30,7 +33,10 @@ registerLocaleData(zh);
     ModelViewSwitchComponent,
     ModelViewItemContainerComponent,
     ModelViewListComponent,
-    ModelViewDetailsComponent
+    ModelViewDetailsComponent,
+    ModelSearchInputComponent,
+    ModelSearchStringInputComponent,
+    ModelSearchNumberInputComponent
   ],
   imports: [
     BrowserModule,

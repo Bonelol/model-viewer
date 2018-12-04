@@ -9,6 +9,15 @@ nz-list-item > div {
     overflow: hidden;
 }
 
-nz-list-item > div:hover {
-    background:orange;
+nz-list-item {
+    cursor: pointer;
+    transition: background-color 0.2s ease-in;
+}
+
+nz-list-item:hover {
+    background: #bae7ff;
+}
+
+nz-list-item.selected {
+    background: #5bc2f9;
 }

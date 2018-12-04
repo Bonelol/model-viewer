@@ -1,0 +1,12 @@
+.mv-search-string-input {
+    display: flex;
+}
+
+.mv-search-string-input > nz-select {
+    width: 30%;
+}
+
+.mv-search-string-input > input {
+    width: 70%;
+    margin-left: 4px;
+}
