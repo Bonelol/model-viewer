@@ -21,6 +21,9 @@
                     <div *ngSwitchCase="types.String">
                         <mv-search-string-input [(ngModel)]="values[property.Name]"></mv-search-string-input>
                     </div>
+                    <div *ngSwitchCase="types.Date">
+                        <mv-search-date-time-input [(ngModel)]="values[property.Name]"></mv-search-date-time-input>
+                    </div>
                     <div *ngSwitchDefault>...</div>
                 </div>
             </div>

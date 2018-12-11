@@ -1,0 +1,12 @@
+<div class="mv-search-date-time-input">
+  <nz-select [(ngModel)]="selectedValue" (ngModelChange)="handleChange()">
+    <nz-option nzValue="equals" nzLabel="Equals"></nz-option>
+    <nz-option nzValue="between" nzLabel="Between"></nz-option>
+    <nz-option nzValue="greaterThan" nzLabel="Greater Than"></nz-option>
+    <nz-option nzValue="lessThan" nzLabel="Less Than"></nz-option>
+  </nz-select>
+  <div>
+    <nz-date-picker *ngIf="input1Visible" [nzPlaceHolder]="input1PlaceHolder" [(ngModel)]="input1" (ngModelChange)="handleChange()"></nz-date-picker>
+    <nz-date-picker *ngIf="input2Visible" [nzPlaceHolder]="input2PlaceHolder" [(ngModel)]="input2" (ngModelChange)="handleChange()"></nz-date-picker>
+  </div>
+</div>

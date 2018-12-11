@@ -1,21 +1,22 @@
 import { Component, OnInit, forwardRef } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { format } from 'date-fns';
 
 @Component({
-    selector: 'mv-search-number-input',
-    templateUrl: './model-search-number-input.component.html',
-    styleUrls: ['./model-search-number-input.component.css'],
+    selector: 'mv-search-date-time-input',
+    templateUrl: './model-search-date-time-input.component.html',
+    styleUrls: ['./model-search-date-time-input.component.css'],
     providers: [{
         provide: NG_VALUE_ACCESSOR,
-        useExisting: forwardRef(() => ModelSearchNumberInputComponent),
+        useExisting: forwardRef(() => ModelSearchDateTimeInputComponent),
         multi: true
     }]
 })
-export class ModelSearchNumberInputComponent implements OnInit, ControlValueAccessor {
+export class ModelSearchDateTimeInputComponent implements OnInit, ControlValueAccessor {
     selectedValue = 'equals';
     value = '';
-    input1: number = null;
-    input2: number = null;
+    input1: Date = null;
+    input2: Date = null;
     input1PlaceHolder = '';
     input2PlaceHolder = '';
 
@@ -59,25 +60,26 @@ export class ModelSearchNumberInputComponent implements OnInit, ControlValueAcce
             case 'equals':
                 this.input1PlaceHolder = 'Equals';
                 this.input2PlaceHolder = '';
-                this.value = `${this.input1}`;
+                this.value = `='${format(this.input1, 'YYYY-MM-DD')}'`;
                 break;
             case 'between':
                 this.input1PlaceHolder = 'Greater Than';
                 this.input2PlaceHolder = 'Less Than';
-                this.value = `>${this.input1} & <${this.input2}`;
+                this.value = `>'${format(this.input1, 'YYYY-MM-DD')}' & <'${format(this.input2, 'YYYY-MM-DD')}'`;
                 break;
             case 'greaterThan':
                 this.input1PlaceHolder = 'Greater Than';
                 this.input2PlaceHolder = 'Less Than';
-                this.value = `>${this.input1}`;
+                this.value = `>'${format(this.input1, 'YYYY-MM-DD')}'`;
                 break;
             case 'lessThan':
                 this.input1PlaceHolder = 'Greater Than';
                 this.input2PlaceHolder = 'Less Than';
-                this.value = `<${this.input2}`;
+                this.value = `<'${format(this.input2, 'YYYY-MM-DD')}'`;
                 break;
         }
 
         this.updateChanges();
     }
+
 }

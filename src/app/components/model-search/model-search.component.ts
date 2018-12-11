@@ -8,58 +8,58 @@ import { ModelViewStoreService } from 'src/app/services/model-view-store.service
 import { ModelViewOptions } from 'src/app/enums/model-view-options.enum';
 
 @Component({
-  selector: 'mv-model-search',
-  templateUrl: './model-search.component.html',
-  styleUrls: ['./model-search.component.css']
+    selector: 'mv-model-search',
+    templateUrl: './model-search.component.html',
+    styleUrls: ['./model-search.component.css']
 })
 export class ModelSearchComponent implements OnInit, OnChanges {
-  @Input() modelViewDescriptor: ModelViewDescriptor;
+    @Input() modelViewDescriptor: ModelViewDescriptor;
 
-  modelClassDetails: ModelClassDetails[] = [];
-  types = Types;
-  values = {} as any;
+    modelClassDetails: ModelClassDetails[] = [];
+    types = Types;
+    values = {} as any;
 
-  get modelClassProperties(): ModelClassDetails[] {
-    return this.modelClassDetails.filter(d => !d.IsNavigation);
-  }
-
-  constructor(private readonly service: ModelDescribeService, private readonly store: ModelViewStoreService) { }
-
-  ngOnInit() {
-  }
-
-  async ngOnChanges(changes: SimpleChanges) {
-    if (changes['modelViewDescriptor'] && this.modelViewDescriptor) {
-      this.modelClassDetails = await this.service.getModelDesctiption(this.modelViewDescriptor.fullClassName).toPromise();
+    get modelClassProperties(): ModelClassDetails[] {
+        return this.modelClassDetails.filter(d => !d.IsNavigation);
     }
-  }
 
-  getType(type: string): Types {
-    return getType(type);
-  }
+    constructor(private readonly service: ModelDescribeService, private readonly store: ModelViewStoreService) { }
 
-  search() {
-    console.log(this.values);
-    const query = {
-      type: this.modelViewDescriptor.fullClassName,
-      query: this.values,
-      page: 0,
-      pageSize: 25
-    };
+    ngOnInit() {
+    }
 
-    const descriptor = {
-      ...this.modelViewDescriptor,
-      query: query,
-      type: ModelViewOptions.List,
-      properties: this.modelClassDetails,
-    } as ModelViewDescriptor;
+    async ngOnChanges(changes: SimpleChanges) {
+        if (changes['modelViewDescriptor'] && this.modelViewDescriptor) {
+            this.modelClassDetails = await this.service.getModelDesctiption(this.modelViewDescriptor.fullClassName).toPromise();
+        }
+    }
 
-    const index = this.store.descriptors.indexOf(this.modelViewDescriptor);
-    const count = index + 1;
-    this.store.descriptors = this.store.descriptors.slice(0, count).concat(descriptor);
-  }
+    getType(type: string): Types {
+        return getType(type);
+    }
 
-  clear() {
-    this.values = {};
-  }
+    search() {
+        console.log(this.values);
+        const query = {
+            type: this.modelViewDescriptor.fullClassName,
+            query: this.values,
+            page: 0,
+            pageSize: 25
+        };
+
+        const descriptor = {
+            ...this.modelViewDescriptor,
+            query: query,
+            type: ModelViewOptions.List,
+            properties: this.modelClassDetails,
+        } as ModelViewDescriptor;
+
+        const index = this.store.descriptors.indexOf(this.modelViewDescriptor);
+        const count = index + 1;
+        this.store.descriptors = this.store.descriptors.slice(0, count).concat(descriptor);
+    }
+
+    clear() {
+        this.values = {};
+    }
 }

@@ -10,11 +10,11 @@
 
 div.body {
     overflow-y: hidden;
-    padding: 8px;
+    padding: 8px 20px 8px 8px;
 }
 
 div.body:hover {
-    overflow-y: auto;
+    overflow-y: overlay;
 }
 
 .mv-item-container > div + div {

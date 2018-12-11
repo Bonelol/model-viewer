@@ -1,0 +1,20 @@
+.mv-search-date-time-input {
+    display: flex;
+}
+
+.mv-search-date-time-input > nz-select {
+    width: 30%;
+}
+
+.mv-search-date-time-input > div {
+    width: 70%;
+    margin-left: 4px;
+}
+
+nz-date-picker {
+    width: 100%;
+}
+
+nz-date-picker + nz-date-picker {
+    margin-top: 4px;
+}

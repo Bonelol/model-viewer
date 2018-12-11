@@ -21,31 +21,33 @@ import { ModelViewDetailsComponent } from './components/model-view-details/model
 import { ModelSearchInputComponent } from './components/model-search-input/model-search-input.component';
 import { ModelSearchStringInputComponent } from './components/model-search-string-input/model-search-string-input.component';
 import { ModelSearchNumberInputComponent } from './components/model-search-number-input/model-search-number-input.component';
+import { ModelSearchDateTimeInputComponent } from './components/model-search-date-time-input/model-search-date-time-input.component';
 
 registerLocaleData(zh);
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    ModelListComponent,
-    ModelViewContainerComponent,
-    ModelSearchComponent,
-    ModelViewSwitchComponent,
-    ModelViewItemContainerComponent,
-    ModelViewListComponent,
-    ModelViewDetailsComponent,
-    ModelSearchInputComponent,
-    ModelSearchStringInputComponent,
-    ModelSearchNumberInputComponent
-  ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    FormsModule,
-    HttpClientModule,
-    NgZorroAntdModule
-  ],
-  providers: [{ provide: NZ_I18N, useValue: zh_CN }, HttpService, ModelDescribeService, ModelViewStoreService],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        ModelListComponent,
+        ModelViewContainerComponent,
+        ModelSearchComponent,
+        ModelViewSwitchComponent,
+        ModelViewItemContainerComponent,
+        ModelViewListComponent,
+        ModelViewDetailsComponent,
+        ModelSearchInputComponent,
+        ModelSearchStringInputComponent,
+        ModelSearchNumberInputComponent,
+        ModelSearchDateTimeInputComponent
+    ],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        FormsModule,
+        HttpClientModule,
+        NgZorroAntdModule
+    ],
+    providers: [{ provide: NZ_I18N, useValue: zh_CN }, HttpService, ModelDescribeService, ModelViewStoreService],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
